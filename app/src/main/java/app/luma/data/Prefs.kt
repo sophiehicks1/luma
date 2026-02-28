@@ -481,7 +481,12 @@ class Prefs(
             }
             return if (prefs.getBoolean(STATUS_BAR_ENABLED, true)) StatusBarMode.Enabled else StatusBarMode.None
         }
-        set(value) = prefs.edit().putString(STATUS_BAR_MODE, value.name).apply()
+        set(value) {
+            prefs.edit()
+                .putString(STATUS_BAR_MODE, value.name)
+                .putBoolean(STATUS_BAR_ENABLED, value == StatusBarMode.Enabled)
+                .apply()
+        }
 
     var timeEnabled: Boolean
         get() = prefs.getBoolean(TIME_ENABLED, true)
