@@ -18,6 +18,14 @@
     <string name="settings_notifications">Notifications</string>
     <string name="settings_hidden_apps">Hidden Apps</string>
     <string name="settings_default_launcher">Default Launcher</string>
+    <string name="settings_strict_mode_enable">Enable Strict Mode</string>
+
+    <!-- Strict Mode -->
+    <string name="strict_mode_title">Strict Mode</string>
+    <string name="strict_mode_enable_description">Strict Mode locks the launcher settings so that hidden apps cannot be changed.\n\nWhile Strict Mode is enabled, the settings menu cannot be opened through the usual method.\n\nTo disable Strict Mode, connect a hardware keyboard and press Super + G.</string>
+    <string name="strict_mode_locked_description">Settings are currently locked.\n\nStrict Mode is enabled, which prevents access to the settings menu.\n\nTo disable Strict Mode, connect a hardware keyboard and press Super + G.</string>
+    <string name="strict_mode_cancel">Cancel</string>
+    <string name="strict_mode_proceed">Proceed</string>
 
     <!-- Gesture actions -->
     <string name="action_open_app">Open App</string>

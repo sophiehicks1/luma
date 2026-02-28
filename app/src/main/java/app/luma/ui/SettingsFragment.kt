@@ -88,6 +88,9 @@ class SettingsFragment : Fragment() {
                     }
                     SimpleTextButton(stringResource(R.string.settings_hidden_apps)) { showHiddenApps() }
                     SimpleTextButton(stringResource(R.string.settings_default_launcher)) { openDefaultLauncherSettings() }
+                    SimpleTextButton(stringResource(R.string.settings_strict_mode_enable)) {
+                        findNavController().navigate(R.id.action_settingsFragment_to_strictModeEnableFragment)
+                    }
                 }
             }
         }

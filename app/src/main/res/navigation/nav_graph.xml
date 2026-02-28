@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_notificationListFragment"
             app:destination="@id/notificationListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_strictModeLockedFragment"
+            app:destination="@id/strictModeLockedFragment" />
     </fragment>
 
     <fragment
@@ -114,6 +117,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_hapticsFragment"
             app:destination="@id/hapticsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_strictModeEnableFragment"
+            app:destination="@id/strictModeEnableFragment" />
     </fragment>
     <fragment
         android:id="@+id/themeModeFragment"
@@ -253,4 +259,12 @@
             android:name="action"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/strictModeEnableFragment"
+        android:name="app.luma.ui.StrictModeEnableFragment"
+        android:label="StrictModeEnableFragment" />
+    <fragment
+        android:id="@+id/strictModeLockedFragment"
+        android:name="app.luma.ui.StrictModeLockedFragment"
+        android:label="StrictModeLockedFragment" />
 </navigation>

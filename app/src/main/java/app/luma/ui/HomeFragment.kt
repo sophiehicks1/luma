@@ -183,7 +183,11 @@ class HomeFragment :
                 onLongClick = {
                     try {
                         performLongPressHaptic()
-                        findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
+                        if (prefs.strictModeEnabled) {
+                            findNavController().navigate(R.id.action_mainFragment_to_strictModeLockedFragment)
+                        } else {
+                            findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
+                        }
                     } catch (_: Exception) {
                     }
                 },
