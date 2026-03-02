@@ -8,6 +8,7 @@ import android.content.pm.LauncherApps
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -102,6 +103,20 @@ class MainActivity : AppCompatActivity() {
         setIntent(intent)
         handlePinShortcutRequest(intent)
         backToHomeScreen()
+    }
+
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        if (event.action == KeyEvent.ACTION_DOWN &&
+            event.keyCode == KeyEvent.KEYCODE_G &&
+            (event.metaState and KeyEvent.META_META_ON) != 0
+        ) {
+            if (navController.currentDestination?.id == R.id.strictModeLockedFragment) {
+                prefs.strictModeEnabled = false
+                navController.popBackStack()
+                return true
+            }
+        }
+        return super.dispatchKeyEvent(event)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
